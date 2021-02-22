@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/starter-template.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.css') }}">
+		
+		{% if title %}
+		<title>{{ title }}  &raquo;  NANCY</title>
+		{% else %}
+		<title>Welcome to NANCY</title>
+		{% endif %}
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+			<div class="container-fluid">
+				<div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a></li>
+						{% if current_user.is_anonymous %}
+						<li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log in</a></li>
+						{% else %}
+						<li class="nav-item"><a class="nav-link" href="{{ url_for('nancy') }}">NANCY</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+						{% endif %}
+						<!--<li class="nav-item"><a class="nav-link" href="/intent">Intent</a></li>
+						<li class="nav-item"><a class="nav-link" href="/music">Music</a></li>
+						<li class="nav-item"><a class="nav-link" href="/animation">Animation</a></li>-->
+						
+						<!--<li class="nav-item">
+						  <a class="nav-link" href="#">Switch account</a>
+						</li>
+						<li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+						  <ul class="dropdown-menu" aria-labelledby="dropdown01">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+						  </ul>
+						</li>-->
+					</ul>
+					<form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+		
+		<main class="container">
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<ul>
+				{% for message in messages %}
+				<li>{{ message }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			{% endwith %}
+			
+			{% block content %}{% endblock %}
+		
+		</main>
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="{{ url_for('static', filename='js/jquery-3.5.1.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+		<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/practice.js') }}"></script>
+		
+		{% extends "footer.html" %}
+		

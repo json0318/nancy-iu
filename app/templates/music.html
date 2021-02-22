@@ -1,0 +1,12 @@
+	{% extends "base.html" %}
+	{% block content %}
+	
+	<div class="starter-template text-center py-5 px-3">
+		<h1>Welcome to {{ title }} </h1>
+		{% for song in playlist.items() %}
+		<div><p>{{ song }} </p></div>
+		
+	</div>
+	
+	{% endfor %}
+	{% endblock %}

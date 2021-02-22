@@ -1,0 +1,20 @@
+	{% extends "base.html" %}
+	{% block content %}
+	<script type="text/javascript">
+	  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	</script>
+	
+	<div class="starter-template text-center py-5 px-3">
+		<h1>Hi, {{ current_user.username }}!</h1>
+		
+		<p>
+			<h5>Enter message&nbsp;&nbsp;
+			<input type="text" id="msg" name="msg" />&nbsp;&nbsp;
+			<a href="javascript:chat()" class="btn" id="send">Send</a>
+			</h5>
+		</p>
+		
+		<div id="result" class="result"><h5></h5></div>
+		</form>
+	</div>
+	{% endblock %}

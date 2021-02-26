@@ -147,10 +147,6 @@ Jinja2==2.10.1
 jmespath==0.9.4
 joblib==0.13.2
 jsonschema==3.0.2
-jupyter==1.0.0
-jupyter-client==5.3.1
-jupyter-console==6.1.1.dev0
-jupyter-core==4.5.0
 kanren==0.2.3
 Keras==2.2.5
 Keras-Applications==1.0.8

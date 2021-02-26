@@ -268,7 +268,6 @@ python-whois==0.7.2
 pyttsx3==2.87
 PyTweening==1.0.3
 pytz==2019.2
-PyWavelets==1.1.1
 pywin32==224
 pywin32-ctypes==0.2.0
 pywinpty==0.5.5

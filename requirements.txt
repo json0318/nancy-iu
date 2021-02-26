@@ -253,7 +253,6 @@ pyquery==1.4.1
 PyRect==0.1.4
 pyrsistent==0.15.4
 PyScreeze==0.1.26
-pystruct==0.3.2
 pytesseract==0.3.7
 pytest==5.4.1
 pytest-shutil==1.7.0

@@ -26,11 +26,8 @@ Mako==1.0.7
 MarkupSafe==1.1.1
 PyJWT==1.5.3
 pandas==0.25.1
-<<<<<<< HEAD
 tensorflow-cpu==2.1.0
 tensorflow-datasets==1.2.0
-=======
->>>>>>> e75ad787f71689d90b529db9e66d0e2f3fbeef96
 numpy==1.16.4
 python-dateutil==2.6.1
 python-dotenv==0.15.0

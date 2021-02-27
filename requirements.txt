@@ -25,6 +25,10 @@ Jinja2==2.11.2
 Mako==1.0.7
 MarkupSafe==1.1.1
 PyJWT==1.5.3
+Keras==2.2.5
+Keras-Applications==1.0.8
+keras-metrics==1.1.0
+Keras-Preprocessing==1.1.0
 pandas==0.25.1
 tensorflow-cpu==2.1.0
 tensorflow-datasets==1.2.0

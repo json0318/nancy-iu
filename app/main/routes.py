@@ -7,7 +7,7 @@ from app import db
 from app.main.forms import EditProfileForm, EmptyForm, PostForm, ChatForm, SearchForm
 from app.models import User, Post
 from app.main import bp
-#from app.core_nancy import predict
+from app.core_nancy import predict
 import json
 
 @bp.before_request
@@ -156,7 +156,7 @@ def search():
 @bp.route('/chat', methods=['POST'])
 @login_required
 def chat():
-    result = "NANCY: " + "Success" #predict(request.form['msg'])
+    result = "NANCY: " + predict(request.form['msg'])
     msg = "<div>"+request.form['username']+": "+request.form['msg']+"</div><div>"+result+"</div>"
 
     return msg
